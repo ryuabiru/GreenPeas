@@ -37,26 +37,26 @@ cargo build --release --manifest-path src-tauri/Cargo.toml --example benchmark
 /usr/bin/time -l src-tauri/target/release/examples/benchmark --full
 ```
 
-Record the GreenPeas commit, operating system, CPU architecture, profile, and
-median results when publishing or comparing a baseline.
+Record the GreenPeas version, measurement date, operating system, CPU
+architecture, profile, and median results when publishing or comparing a baseline.
 
-## Working baseline (2026-10-24)
+The measurements below were recorded during development on the specified
+hardware. Rerun the commands above to measure the current source on your machine.
 
-Run on macOS 26.6.2, Apple Silicon arm64, 8 logical CPUs, from commit `b2a47cc`
-with the current uncommitted changes. Command:
-`/usr/bin/time -l src-tauri/target/release/benchmark --full` (the runner was moved
-to `target/release/examples/benchmark` afterward). The deterministic input was 5 Mbp
-with 15 iterations. Median times were 33.99 ms for DNA search, 9.02 ms for a
-20 bp replacement, 185.59 ms for FASTA export, 140.29 ms for GenBank export,
+## Development baseline (2026-10-24)
+
+Run on macOS 26.6.2, Apple Silicon arm64, 8 logical CPUs. The deterministic input
+was 5 Mbp with 15 iterations. Median times were 33.99 ms for DNA search,
+9.02 ms for a 20 bp replacement, 185.59 ms for FASTA export, 140.29 ms for GenBank export,
 and 27.75 ms for GenBank import. Peak resident set size was 261,111,808 bytes
 (about 249 MiB). Correctness checks passed. This measures the Rust core only;
 it does not measure UI responsiveness or long-running memory use.
 
 ## P0 recheck (2026-10-25)
 
-macOS 26.6.2, Apple Silicon arm64, 8 logical CPUs, commit `545a58b` plus the
-uncommitted P0 changes. The release example was built with the local offline
-Cargo cache. Quick (100 kbp, 3 iterations), standard (1 Mbp, 9 iterations),
+macOS 26.6.2, Apple Silicon arm64, 8 logical CPUs, after the P0 changes.
+The release example was built with the local offline Cargo cache.
+Quick (100 kbp, 3 iterations), standard (1 Mbp, 9 iterations),
 and full (5 Mbp, 15 iterations) profiles passed correctness checks. The full
 profile was run with `/usr/bin/time -l` and compared with the baseline above:
 
