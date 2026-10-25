@@ -1,0 +1,29 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": [
+    "main",
+    "sequence-*"
+  ],
+  "permissions": [
+    "core:event:default",
+    "core:window:allow-destroy",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [
+        { "url": "https://github.com/ryuabiru/GreenPeas/issues/new*" },
+        { "url": "https://tauri.app" },
+        { "url": "https://reactjs.org" },
+        { "url": "https://lucide.dev" },
+        { "url": "https://crates.io/crates/gb-io" },
+        { "url": "https://github.com/BurntSushi/aho-corasick" },
+        { "url": "https://serde.rs" },
+        { "url": "https://vitejs.dev" }
+      ]
+    },
+    "dialog:default",
+    "clipboard-manager:allow-write-text",
+    "clipboard-manager:allow-read-text"
+  ]
+}

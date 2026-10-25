@@ -1,0 +1,9 @@
+LOCUS       BROKEN_DEMO 12 bp DNA linear SYN 24-OCT-2026
+DEFINITION  Synthetic malformed fixture.
+ACCESSION   BROKEN_DEMO
+FEATURES             Location/Qualifiers
+     misc_feature    nonsense(location)
+                     /label="Broken feature"
+ORIGIN
+        1 acgtacgtac gt
+//

@@ -1,0 +1,6 @@
+>record_one Synthetic first record
+ACGT
+ACGT
+>record_two Synthetic second record
+GGCC
+TTAA

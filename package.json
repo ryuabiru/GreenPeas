@@ -1,0 +1,48 @@
+{
+  "name": "greenpeas",
+  "private": true,
+  "license": "MIT",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run",
+    "build": "tsc && vite build",
+    "benchmark:core": "cargo run --release --manifest-path src-tauri/Cargo.toml --example benchmark --",
+    "benchmark:ui-proxy": "node scripts/benchmark-ui.mjs",
+    "fixtures:p0": "node scripts/generate-p0-fixtures.mjs",
+    "licenses:generate": "node scripts/generate-third-party-licenses.mjs",
+    "release:macos": "bash scripts/build-release-macos.sh",
+    "release:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-release-windows.ps1",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-clipboard-manager": "^2.3.2",
+    "@tauri-apps/plugin-dialog": "^2.6.0",
+    "@tauri-apps/plugin-opener": "^2",
+    "lucide-react": "^1.7.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "jsdom": "^29.0.2",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4",
+    "vitest": "^4.1.5"
+  }
+}

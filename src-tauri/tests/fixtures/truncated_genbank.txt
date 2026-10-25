@@ -1,0 +1,6 @@
+LOCUS       TRUNCATED_DEMO 12 bp DNA linear SYN 24-OCT-2026
+DEFINITION  Synthetic truncated fixture.
+ACCESSION   TRUNCATED_DEMO
+FEATURES             Location/Qualifiers
+     misc_feature    1..4
+                     /label="Never completed"

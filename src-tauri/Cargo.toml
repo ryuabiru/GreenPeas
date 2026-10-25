@@ -1,0 +1,42 @@
+[package]
+name = "greenpeas"
+version = "0.1.0"
+description = "A desktop DNA sequence editor and cloning workspace"
+authors = ["Ryuki Abiru"]
+edition = "2021"
+default-run = "greenpeas"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "greenpeas_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+regex = "1"
+tauri-plugin-dialog = "2"
+quick-xml = "0.37.2"
+gb-io = "0.9.0"
+chrono = "0.4"
+aho-corasick = "1.1.4"
+tauri-plugin-clipboard-manager = "2"
+ts-rs = { version = "10.0.0", features = ["serde-compat"] }
+thiserror = "2"
+sqlx = { version = "0.8.6", default-features = false, features = ["sqlite", "runtime-tokio", "macros"] }
+tokio = { version = "1.52.1", features = ["full"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+anyhow = "1"
+
+[profile.release]
+strip = "symbols"

@@ -1,0 +1,5 @@
+# Test fixtures are inputs to parser tests, not application source.
+tests/
+
+# Finder metadata should not restart the Tauri development app.
+.DS_Store

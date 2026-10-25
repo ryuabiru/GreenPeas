@@ -1,0 +1,233 @@
+.rm-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.rm-modal-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 85vh;
+    max-height: 850px;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.rm-header {
+    padding: 40px 40px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rm-header-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.rm-icon-box {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.rm-main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+.rm-sidebar {
+    width: 260px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rm-content {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.rm-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    width: 100%;
+    text-align: left;
+}
+
+.rm-nav-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.rm-nav-item.active {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.rm-badge {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    font-weight: 800;
+}
+
+.rm-active .rm-badge {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.rm-section {
+    padding: 40px;
+}
+
+/* Library View */
+.rm-search-bar {
+    padding: 24px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: 16px;
+}
+
+.rm-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.rm-input-wrapper svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+}
+
+.rm-input {
+    width: 100%;
+    background: #121212;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 12px 12px 12px 48px;
+    color: white;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.rm-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+
+.rm-item-list {
+    padding: 24px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rm-enzyme-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: #1a1a1a;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    transition: all 0.2s;
+}
+
+.rm-enzyme-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: #222222;
+}
+
+/* Visual Cutter Component Styling */
+.vc-container {
+    background: #121212;
+    padding: 32px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vc-sequence-box {
+    margin: 24px 0;
+    padding: 48px;
+    background: #0a0a0a;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.vc-strand {
+    display: flex;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    align-items: center;
+}
+
+.vc-gap {
+    width: 4px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.vc-gap-hit {
+    position: absolute;
+    inset: 0 -16px;
+}
+
+.vc-gap-line {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-radius: 2px;
+}
+
+.vc-gap:hover .vc-gap-line {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.vc-gap.active .vc-gap-line {
+    background: #ef4444;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+}

@@ -1,0 +1,15 @@
+LOCUS       LINEAR_DEMO 12 bp DNA linear SYN 24-OCT-2026
+DEFINITION  Synthetic compatibility fixture – 模擬配列.
+ACCESSION   LINEAR_DEMO
+FEATURES             Location/Qualifiers
+     source          1..12
+     misc_feature    2..6
+                     /label="Forward feature"
+     CDS             complement(7..10)
+                     /label="Reverse CDS"
+     primer_bind     1..4
+                     /label="Demo primer"
+                     /note="sequence: AAGT"
+ORIGIN
+        1 acgtacgtac gt
+//

@@ -1,0 +1,9 @@
+LOCUS       BAD_QUALIFIER 12 bp DNA linear SYN 24-OCT-2026
+DEFINITION  Synthetic malformed-qualifier fixture.
+ACCESSION   BAD_QUALIFIER
+FEATURES             Location/Qualifiers
+     misc_feature    1..4
+                     /label="Unclosed qualifier
+ORIGIN
+        1 acgtacgtac gt
+//

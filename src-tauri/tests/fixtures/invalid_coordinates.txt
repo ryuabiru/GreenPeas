@@ -1,0 +1,9 @@
+LOCUS       BAD_COORDINATE 12 bp DNA linear SYN 24-OCT-2026
+DEFINITION  Synthetic invalid-coordinate fixture.
+ACCESSION   BAD_COORDINATE
+FEATURES             Location/Qualifiers
+     misc_feature    8..20
+                     /label="Outside sequence"
+ORIGIN
+        1 acgtacgtac gt
+//
