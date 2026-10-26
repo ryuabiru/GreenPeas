@@ -9,6 +9,22 @@ GreenPeas is licensed under the MIT License. This repository contains the applic
 See [DEVELOPMENT.md](DEVELOPMENT.md) for the maintained architecture guide,
 development rules, implemented milestones, and backlog.
 
+## Screenshots
+
+Click an image to view it at full size.
+
+| Sequence view · light | Sequence view · dark |
+| --- | --- |
+| [![DNA sequence and annotations in light mode](docs/screenshots/lightmode.png)](docs/screenshots/lightmode.png) | [![DNA sequence and annotations in dark mode](docs/screenshots/darkmode.png)](docs/screenshots/darkmode.png) |
+
+| Circular map | Linear map |
+| --- | --- |
+| [![Circular map with features, primers, and restriction sites](docs/screenshots/circlemap.png)](docs/screenshots/circlemap.png) | [![Linear map with features, primers, and restriction sites](docs/screenshots/linearmap.png)](docs/screenshots/linearmap.png) |
+
+**Sequence alignment**
+
+[![Aligned sequences with differences highlighted](docs/screenshots/alignment.png)](docs/screenshots/alignment.png)
+
 ## 🧬 About the Name & Logo
 
 GreenPeas takes its name from the pea plants Gregor Mendel used to uncover the basic patterns of inheritance. The logo combines a DNA double helix with motifs of the round (smooth) and wrinkled pea seeds he studied.
