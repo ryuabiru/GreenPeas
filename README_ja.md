@@ -23,7 +23,7 @@ GreenPeasは、配列をすばやく確認するときや日常的なクロー�
 - 次回リリースタグ: ベータ版の配布物を検証した後に決定
 - 開発版アプリバージョン: `0.1.0`
 - プロジェクトライセンス: MIT License
-- 初回ベータの配布物: Apple Silicon Mac（`arm64`）。Windows版とIntel Mac版は実機確認後に配布
+- 初回ベータの配布物: Apple Silicon Mac（`arm64`）。Windows `x64`版も実機でビルドと起動を確認済みで、次回ベータ版として配布予定。Intel Mac版は実機確認後に配布
 
 ## GreenPeasでできること
 
@@ -45,7 +45,7 @@ GreenPeasは、配列をすばやく確認するときや日常的なクロー�
 
 - 実際のファイルを用いた互換性テストの拡充
 - 対応プラットフォームにおけるリリースビルド検証の拡充
-- Windows版とIntel Mac版のリリースビルド、および開発環境のない端末での起動確認
+- Intel Mac版のリリースビルド、および開発環境のない端末での起動確認
 
 ## 開発
 
@@ -69,7 +69,7 @@ npm run release:macos
 npm run release:windows # Windows上で実行
 ```
 
-各成果物は対象OS上でビルドします。スクリプトはパッケージ化前にその環境向けの`THIRD_PARTY_LICENSES.txt`を再生成します。Windows版はWindows実機での確認が必要です。
+各成果物は対象OS上でビルドします。スクリプトはパッケージ化前にその環境向けの`THIRD_PARTY_LICENSES.txt`を再生成します。Windows `x64`版は2026年10月27日に実機でリリースビルド、MSIとNSISインストーラーの生成、インストール後の起動を確認しました。開発環境のない別端末での起動は未確認です。
 
 TauriパッケージでRustチェックを実行する:
 

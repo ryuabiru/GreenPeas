@@ -46,7 +46,7 @@ GreenPeas is designed to use memory sparingly and stay responsive during quick s
 - Next release tag: to be assigned after the beta build is validated
 - Development app version: `0.1.0`
 - Project license: MIT License
-- First beta binary: Apple Silicon Mac (`arm64`); Windows and Intel Mac builds will follow validation
+- First beta binary: Apple Silicon Mac (`arm64`); the Windows `x64` build and launch have been validated locally and are planned for the next beta release; Intel Mac will follow validation
 
 ## What GreenPeas Does
 
@@ -68,7 +68,7 @@ Known priorities for future releases:
 
 - More real-world file compatibility testing.
 - More release-build validation on supported platforms.
-- Windows and Intel Mac release builds, and clean-machine launch checks.
+- Intel Mac release builds and clean-machine launch checks.
 
 ## Development
 
@@ -92,7 +92,7 @@ npm run release:macos
 npm run release:windows # on Windows
 ```
 
-Build each release on its target OS. The scripts regenerate `THIRD_PARTY_LICENSES.txt` for that machine before packaging. The Windows build still needs validation on a Windows machine.
+Build each release on its target OS. The scripts regenerate `THIRD_PARTY_LICENSES.txt` for that machine before packaging. On October 27, 2026, the Windows `x64` release build, MSI and NSIS installer creation, and post-install launch were verified on a Windows machine. Launch on a separate machine without development tools remains unverified.
 
 Run Rust checks from the Tauri package:
 
