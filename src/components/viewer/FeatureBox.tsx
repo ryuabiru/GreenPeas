@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Annotation, AppSettings, INDEX_COLUMN_WIDTH } from '../../types';
-import { getFeatureColor } from '../../utils/colorUtils';
+import { getVisibleFeatureColor } from '../../utils/colorUtils';
 import { getAminoAcidColor } from '../../utils/aaColors';
 import { LayoutMetrics } from '../../utils/sequenceLayout';
 import { decodeHtmlEntities } from '../../utils/textUtils';
@@ -36,7 +36,7 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
   ann, startX, width, boxY, labelY, aaY, translation, rowStartIndex, rowStrLen, charWidth, settings, isDark, 
   onClick, onDoubleClick, hoveredCodon, onHoverCodon, onMouseDownIdx, onMouseEnterIdx, isHovered
 }) => {
-  const color = getFeatureColor(ann.type, ann.color || undefined);
+  const color = getVisibleFeatureColor(ann.type, ann.color || undefined, isDark);
   const displayName = decodeHtmlEntities(ann.name);
   const needsLabel = LayoutMetrics.needsLabel(width, displayName.length, settings);
   const rowWidth = rowStrLen * charWidth;
@@ -60,7 +60,7 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
     return {
       clipPath,
       WebkitClipPath: clipPath,
-      backgroundColor: isHovered ? (isDark ? `${color}66` : `${color}44`) : (isDark ? `${color}44` : `${color}22`),
+      backgroundColor: isHovered ? (isDark ? `${color}66` : `${color}55`) : (isDark ? `${color}44` : `${color}33`),
       border: isHovered ? `2px solid ${color}` : `1px solid ${color}`,
       height: `${LayoutMetrics.getBoxHeight(settings)}px`,
       borderRadius: '2px',

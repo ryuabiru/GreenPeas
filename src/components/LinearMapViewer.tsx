@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { MapViewerProps } from './MapViewer';
-import { getFeatureColor } from '../utils/colorUtils';
+import { getVisibleFeatureColor } from '../utils/colorUtils';
 import { decodeHtmlEntities } from '../utils/textUtils';
 import {
   buildLinearMapLayout, clampMapRange, panMapRange, zoomMapRange,
@@ -264,7 +264,7 @@ export const LinearMapViewer: React.FC<LinearMapViewerProps> = ({
 
         {layout.features.map(({ annotation, part, x, width: featureWidth, lane, showLabel }) => {
           const y = featureTop + lane * 28;
-          const color = getFeatureColor(annotation.type, annotation.color || undefined);
+          const color = getVisibleFeatureColor(annotation.type, annotation.color || undefined, isDark);
           const name = decodeHtmlEntities(annotation.name);
           const selected = selection?.start === annotation.start && selection?.end === annotation.end;
           return <g key={`${annotation.id}-${part}`} onMouseDown={event => event.stopPropagation()}
@@ -275,7 +275,7 @@ export const LinearMapViewer: React.FC<LinearMapViewerProps> = ({
             style={{ cursor: 'pointer' }}>
             <title>{name} ({annotation.type}) · {annotation.start + 1}–{annotation.end}</title>
             <rect x={x} y={y} width={featureWidth} height="19" rx="3" fill={color}
-              opacity={selected ? 1 : 0.8} stroke={selected ? foreground : 'none'} strokeWidth="2" />
+              opacity={selected || !isDark ? 1 : 0.8} stroke={selected ? foreground : 'none'} strokeWidth="2" />
             {annotation.display_shape === 'Arrow' && featureWidth >= 14 && <polygon
               points={annotation.strand === 'Reverse'
                 ? `${x},${y + 9.5} ${x + 9},${y} ${x + 9},${y + 19}`

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Annotation } from '../../types';
-import { getFeatureColor } from '../../utils/colorUtils';
+import { getVisibleFeatureColor } from '../../utils/colorUtils';
 import { getCircularCoordinates, describeCircularArc } from '../../utils/circularLayout';
 import { decodeHtmlEntities } from '../../utils/textUtils';
 
@@ -48,7 +48,7 @@ export const CircularFeature: React.FC<CircularFeatureProps> = ({
     `${arrowBaseX + tangentY * 6},${arrowBaseY - tangentX * 6}`;
   const midpoint = getCircularCoordinates((ann.start + featureLength / 2) % seqLength, seqLength, currentRadius, centerX, centerY);
   
-  const color = getFeatureColor(ann.type, ann.color || undefined);
+  const color = getVisibleFeatureColor(ann.type, ann.color || undefined, isDark);
 
   return (
     <g 
@@ -59,7 +59,7 @@ export const CircularFeature: React.FC<CircularFeatureProps> = ({
       style={{ cursor: 'pointer' }}>
       <title>{`${displayName} (${ann.type}) · ${ann.start + 1}..${ann.end} · ${ann.strand}`}</title>
       
-      <path d={arcPath} fill="none" stroke={color} strokeWidth={isHovered ? 18 : 12} style={{ opacity: isHovered ? 1 : (isDark ? 0.8 : 0.6), transition: 'all 0.2s' }} />
+      <path d={arcPath} fill="none" stroke={color} strokeWidth={isHovered ? 18 : 12} style={{ opacity: isHovered ? 1 : (isDark ? 0.8 : 1), transition: 'all 0.2s' }} />
       {arcLengthOnMain < 10 && <circle cx={midpoint.x} cy={midpoint.y} r={isHovered ? 7 : 5} fill={color} />}
       
       {ann.display_shape === "Arrow" && (
