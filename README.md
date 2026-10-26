@@ -21,9 +21,15 @@ Click an image to view it at full size.
 | --- | --- |
 | [![Circular map with features, primers, and restriction sites](docs/screenshots/circlemap.png)](docs/screenshots/circlemap.png) | [![Linear map with features, primers, and restriction sites](docs/screenshots/linearmap.png)](docs/screenshots/linearmap.png) |
 
-**Sequence alignment**
+**Sequence alignment · five samples**
 
-[![Aligned sequences with differences highlighted](docs/screenshots/alignment.png)](docs/screenshots/alignment.png)
+[![Five aligned sequences with differences highlighted](docs/screenshots/alignment.png)](docs/screenshots/alignment.png)
+
+The synthetic sequences shown here are available in [test-data/alignment-samples](test-data/alignment-samples).
+
+**Smart Ligation preview**
+
+[![Smart Ligation preview showing compatible junctions](docs/screenshots/smart-ligation.png)](docs/screenshots/smart-ligation.png)
 
 ## 🧬 About the Name & Logo
 
