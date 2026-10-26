@@ -8,6 +8,30 @@ GreenPeasはMITライセンスのソフトウェアです。このリポジト�
 
 保守されているアーキテクチャガイド、開発ルール、実装済みマイルストーン、バックログについては、[日本語版開発ガイド](DEVELOPMENT_ja.md)を参照してください。
 
+操作方法と対応ファイル形式は[日本語ユーザーガイド](docs/USER_GUIDE_ja.md)にまとめています。[English user guide](docs/USER_GUIDE.md)もあります。
+
+## スクリーンショット
+
+画像をクリックすると原寸で表示できます。
+
+| 配列ビュー・ライト | 配列ビュー・ダーク |
+| --- | --- |
+| [![ライトテーマのDNA配列とアノテーション](docs/screenshots/lightmode.png)](docs/screenshots/lightmode.png) | [![ダークテーマのDNA配列とアノテーション](docs/screenshots/darkmode.png)](docs/screenshots/darkmode.png) |
+
+| 環状マップ | 線状マップ |
+| --- | --- |
+| [![環状マップに表示されたアノテーション、プライマー、制限酵素サイト](docs/screenshots/circlemap.png)](docs/screenshots/circlemap.png) | [![線状マップに表示されたアノテーション、プライマー、制限酵素サイト](docs/screenshots/linearmap.png)](docs/screenshots/linearmap.png) |
+
+**5サンプルの配列アラインメント**
+
+[![差分を強調表示した5サンプルのアラインメント](docs/screenshots/alignment.png)](docs/screenshots/alignment.png)
+
+画像の合成配列は[test-data/alignment-samples](test-data/alignment-samples)にあります。
+
+**Smart Ligationのプレビュー**
+
+[![連結部の適合性を示すSmart Ligationプレビュー](docs/screenshots/smart-ligation.png)](docs/screenshots/smart-ligation.png)
+
 ## 🧬 名前とロゴについて
 
 GreenPeasという名前は、遺伝の基本的な法則を明らかにしたグレゴール・メンデルのエンドウに由来します。ロゴにはDNAの二重らせんと、メンデルが研究した丸い（滑らかな）種子・しわのある種子のモチーフを組み合わせています。
@@ -16,14 +40,12 @@ GreenPeasという名前は、遺伝の基本的な法則を明らかにした�
 
 GreenPeasは、配列をすばやく確認するときや日常的なクローニング作業で、メモリ使用量を抑えながら軽快に動くことを目指して設計しています。メモリに余裕のないノートパソコンでの利用も想定しています。再現可能なRustコアのベンチマーク結果は[BENCHMARKS.md](BENCHMARKS.md)に掲載しています。
 
-## 現在のリリース計画
+## リリース
 
-- 最初に公開するもの: [GreenPeas](https://github.com/ryuabiru/GreenPeas)のソースコード
-- インストール可能なベータ版: 後日コンパイル・検証して配布
-- 次回リリースタグ: ベータ版の配布物を検証した後に決定
-- 開発版アプリバージョン: `0.1.0`
+- インストール可能なベータ版: Apple Silicon macOS（`arm64`）版とWindows（`x64`）版を[公式Releasesページ](https://github.com/ryuabiru/GreenPeas/releases)で配布中
+- アプリバージョン: `0.1.0`
 - プロジェクトライセンス: MIT License
-- 初回ベータの配布物: Apple Silicon Mac（`arm64`）。Windows `x64`版も実機でビルドと起動を確認済みで、次回ベータ版として配布予定。Intel Mac版は実機確認後に配布
+- Windows `x64`版は実機でリリースビルドとインストール後の起動を確認済み。Intel Mac版は実機確認が必要
 
 ## GreenPeasでできること
 
@@ -35,9 +57,9 @@ GreenPeasは、配列をすばやく確認するときや日常的なクロー�
 
 ## ベータ版について
 
-今後配布するベータ版は、テストとフィードバック収集を目的としています。重要な実験データの唯一の保存先として使用しないでください。
+ベータ版はテストとフィードバック収集を目的としています。重要な実験データの唯一の保存先として使用しないでください。
 
-次のベータ版はmacOS向けのアドホック署名を付け、Developer ID署名と公証は行わずに配布します。`release:macos`スクリプトはビルド環境のCPUアーキテクチャ向けにのみビルドします。Intel（`x64`）版とApple Silicon（`arm64`）版は別々の成果物で、Universalアプリではありません。今後のベータ版は[GreenPeas公式Releasesページ](https://github.com/ryuabiru/GreenPeas/releases)からのみダウンロードしてください。
+macOS向けベータ版にはアドホック署名を付け、Developer ID署名と公証は行っていません。`release:macos`スクリプトはビルド環境のCPUアーキテクチャ向けにのみビルドします。Intel（`x64`）版とApple Silicon（`arm64`）版は別々の成果物で、Universalアプリではありません。ベータ版は[GreenPeas公式Releasesページ](https://github.com/ryuabiru/GreenPeas/releases)からのみダウンロードしてください。
 
 公証されていないため、macOSがアプリの起動を止める場合があります。公式リポジトリからダウンロードした後、一度GreenPeasを開いてください。macOSに止められた場合は、**システム設定 → プライバシーとセキュリティ**を開き、「セキュリティ」までスクロールしてGreenPeasの**このまま開く**を選び、続けて**開く**を確認します。公式リポジトリから入手し、信頼できる成果物に対してのみ警告を解除してください。詳しくは[Appleの案内](https://support.apple.com/102445)を参照してください。
 

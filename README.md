@@ -9,6 +9,8 @@ GreenPeas is licensed under the MIT License. This repository contains the applic
 See [DEVELOPMENT.md](DEVELOPMENT.md) for the maintained architecture guide,
 development rules, implemented milestones, and backlog.
 
+For workflows and supported file formats, see the [English user guide](docs/USER_GUIDE.md) or [日本語ユーザーガイド](docs/USER_GUIDE_ja.md).
+
 ## Screenshots
 
 Click an image to view it at full size.
@@ -39,14 +41,12 @@ GreenPeas takes its name from the pea plants Gregor Mendel used to uncover the b
 
 GreenPeas is designed to use memory sparingly and stay responsive during quick sequence viewing and everyday cloning workflows, including on laptops with limited resources. See [BENCHMARKS.md](BENCHMARKS.md) for reproducible Rust core benchmarks.
 
-## Current Release Plan
+## Releases
 
-- First publication: source code in [GreenPeas](https://github.com/ryuabiru/GreenPeas)
-- Installable beta builds: to be compiled, validated, and distributed later
-- Next release tag: to be assigned after the beta build is validated
-- Development app version: `0.1.0`
+- Installable beta builds: Apple Silicon macOS (`arm64`) and Windows (`x64`) on the [official Releases page](https://github.com/ryuabiru/GreenPeas/releases)
+- App version: `0.1.0`
 - Project license: MIT License
-- First beta binary: Apple Silicon Mac (`arm64`); the Windows `x64` build and launch have been validated locally and are planned for the next beta release; Intel Mac will follow validation
+- Windows `x64` release build and post-install launch have been validated on a Windows machine. Intel Mac builds still need validation.
 
 ## What GreenPeas Does
 
@@ -58,9 +58,9 @@ GreenPeas is designed to use memory sparingly and stay responsive during quick s
 
 ## Beta Expectations
 
-The planned beta is intended for testing and feedback. Please avoid relying on it as the only copy of important lab data.
+The beta is intended for testing and feedback. Please avoid relying on it as the only copy of important lab data.
 
-The next beta uses an ad-hoc macOS signature, without a Developer ID signature or notarization. The `release:macos` script builds only for the architecture of the build host; Intel (`x64`) and Apple Silicon (`arm64`) apps are separate artifacts, not a universal app. Download future beta builds only from the [official GreenPeas Releases page](https://github.com/ryuabiru/GreenPeas/releases).
+The macOS beta uses an ad-hoc signature, without a Developer ID signature or notarization. The `release:macos` script builds only for the architecture of the build host; Intel (`x64`) and Apple Silicon (`arm64`) apps are separate artifacts, not a universal app. Download beta builds only from the [official GreenPeas Releases page](https://github.com/ryuabiru/GreenPeas/releases).
 
 macOS may block the app because it is not notarized. After downloading it from the official repository, try opening it once. If macOS blocks it, open **System Settings → Privacy & Security**, scroll to Security, choose **Open Anyway** for GreenPeas, then confirm **Open**. Only override this warning for a build obtained from the official repository and that you trust. See [Apple's instructions for safely opening apps](https://support.apple.com/102445).
 
